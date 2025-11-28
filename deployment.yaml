@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lmspro-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lmspro-frontend
+  template:
+    metadata:
+      labels:
+        app: lmspro-frontend
+    spec:
+      containers:
+        - name: lmspro-frontend
+          image: lmspro-frontend:latest   # or dockerhub image name
+          ports:
+            - containerPort: 80
